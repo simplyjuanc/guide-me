@@ -44,7 +44,10 @@ function PWABadge() {
           </div>
           <div className="PWABadge-buttons">
             {needRefresh && (
-              <button className="PWABadge-toast-button" onClick={() => updateServiceWorker(true)}>
+              <button
+                className="PWABadge-toast-button"
+                onClick={() => updateServiceWorker(true)}
+              >
                 Reload
               </button>
             )}
@@ -63,7 +66,11 @@ export default PWABadge;
 /**
  * This function will register a periodic sync check every hour, you can modify the interval as needed.
  */
-function registerPeriodicSync(period: number, swUrl: string, r: ServiceWorkerRegistration) {
+function registerPeriodicSync(
+  period: number,
+  swUrl: string,
+  r: ServiceWorkerRegistration,
+) {
   if (period <= 0) return;
 
   setInterval(async () => {
